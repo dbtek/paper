@@ -1,0 +1,12 @@
+# Site settings
+title: Paper Theme
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  A gentle theme for Jekyll utilising material design.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: dbtek
+github_username:  dbtek
+
+# Build settings
+markdown: kramdown

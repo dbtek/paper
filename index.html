@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<main class="paper-main mdl-layout__content">
+  <div class="paper-container mdl-grid">
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="paper-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+      {% for post in site.posts %}
+        <h3>{{ post.title }}</h3>
+        {{ post.excerpt }}
+        <a class="mdl-button mdl-js-button mdl-button--primary" href="{{ post.url }}">Read more</a>
+      {% endfor %}
+    </div>
+  </div>
+</main>
+
+<!--
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
+-->

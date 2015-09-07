@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+    <div class="paper-layout-transparent mdl-layout mdl-js-layout">
+      {% include header.html %}
+
+      <main class="mdl-layout__content">
+        {{ content }}
+
+        {% include footer.html %}
+      </main>
+    </div>
+
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+  </body>
+
+</html>
