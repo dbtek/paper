@@ -3,6 +3,8 @@
 ---
 @charset "utf-8";
 
+$primary-color: #2196F3;
+$accent-color: #FFEB3B;
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
@@ -28,9 +30,19 @@ $grey-color-dark:  darken($grey-color, 25%);
 }
 
 .paper-content {
-    border-radius: 2px;
+  border-radius: 2px;
+  @include mobile {
+    padding: 10px 10px;
+    margin-top: 50px;
+  }
+  @include tablet {
     padding: 80px 56px;
     margin-bottom: 80px;
+  }
+  @include desktop {
+    padding: 80px 56px;
+    margin-bottom: 80px;
+  }
 }
 
 .post {
@@ -58,5 +70,13 @@ $grey-color-dark:  darken($grey-color, 25%);
   @include desktop {
     padding-left: 16.66%;
     padding-right: 16.66%;
+  }
+}
+
+.mdl-layout__drawer-button {
+  i {
+    @include mobile {
+      color: $primary-color;
+    }
   }
 }
