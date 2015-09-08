@@ -49,3 +49,14 @@ $grey-color-dark:  darken($grey-color, 25%);
     padding-top: 8px;
   }
 }
+
+.mdl-mega-footer {
+  @include tablet {
+    padding-left: 16.66%;
+    padding-right: 16.66%;
+  }
+  @include desktop {
+    padding-left: 16.66%;
+    padding-right: 16.66%;
+  }
+}
