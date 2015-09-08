@@ -38,8 +38,14 @@ $grey-color-dark:  darken($grey-color, 25%);
 }
 
 .pagination {
-  .mdl-button {
-    border-radius:50%;
-    min-width: 20px;
+  .previous {
+    text-align: left;
+  }
+  .next {
+    text-align: right;
+  }
+  .indicator {
+    text-align: center;
+    padding-top: 8px;
   }
 }

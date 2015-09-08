@@ -24,24 +24,30 @@ layout: default
       </div>
     {% endfor %}
 
-    <div class="pagination">
-      {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-          <a class="mdl-button mdl-button--primary" href="{{ site.baseurl | prepend: site.url}}">&larr; Newer</a>
+    <div class="mdl-grid pagination">
+      <div class="mdl-cell mdl-cell--4-col previous">
+        {% if paginator.previous_page %}
+          {% if paginator.previous_page == 1 %}
+            <a class="mdl-button mdl-button--primary" href="{{ site.baseurl | prepend: site.url}}">&larr; Newer</a>
+          {% else %}
+            <a class="mdl-button mdl-button--primary" href="{{ site.paginate_path | replace: ':num', paginator.previous_page | prepend: site.baseurl | prepend: site.url}}">&larr; Newer</a>
+          {% endif %}
         {% else %}
-          <a class="mdl-button mdl-button--primary" href="{{ site.paginate_path | replace: ':num', paginator.previous_page | prepend: site.baseurl | prepend: site.url}}">&larr; Newer</a>
+          <a class="mdl-button mdl-button--primary" disabled>&larr; Newer</a>
         {% endif %}
-      {% else %}
-        <a class="mdl-button mdl-button--primary" disabled>&larr; Newer</a>
-      {% endif %}
+      </div>
 
-      <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+      <div class="mdl-cell mdl-cell--4-col indicator subheader">
+        Page {{ paginator.page }} / {{ paginator.total_pages }}
+      </div>
 
-      {% if paginator.next_page %}
-        <a class="mdl-button mdl-button--primary" href="{{ site.paginate_path | replace: ':num', paginator.next_page | prepend: site.baseurl | prepend: site.url}}">Older &rarr;</a>
-      {% else %}
-        <a class="mdl-button mdl-button--primary" disabled>Older &rarr;</a>
-      {% endif %}
+      <div class="mdl-cell mdl-cell--4-col next">
+        {% if paginator.next_page %}
+          <a class="mdl-button mdl-button--primary" href="{{ site.paginate_path | replace: ':num', paginator.next_page | prepend: site.baseurl | prepend: site.url}}">Older &rarr;</a>
+        {% else %}
+          <a class="mdl-button mdl-button--primary" disabled>Older &rarr;</a>
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>
