@@ -2,37 +2,46 @@
 layout: default
 ---
 
-<main class="paper-main mdl-layout__content">
-  <div class="paper-container mdl-grid">
-    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-    <div class="paper-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-      {% for post in site.posts %}
+<div class="paper-container mdl-grid">
+  <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+  <div class="paper-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+    {% for post in paginator.posts %}
+      <div class="post">
+        <h5 class="subheader">
+          {% assign d = post.date | date: "%d" | plus:'0' %}
+          {{ post.date | date: "%B" }}
+          {% case d %}
+          {% when 1 or 21 or 31 %}{{ d }}st,
+          {% when 2 or 22 %}{{ d }}nd,
+          {% when 3 or 23 %}{{ d }}rd,
+          {% else %}{{ d }}th,
+          {% endcase %}
+          {{ post.date | date: "%Y" }}
+        </h5>
         <h3>{{ post.title }}</h3>
         {{ post.excerpt }}
-        <a class="mdl-button mdl-js-button mdl-button--primary" href="{{ post.url }}">Read more</a>
-      {% endfor %}
+        <a class="mdl-button mdl-button--primary" href="{{ post.url }}">Read more</a>
+      </div>
+    {% endfor %}
+
+    <div class="pagination">
+      {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+          <a class="mdl-button mdl-button--primary" href="{{ site.baseurl | prepend: site.url}}">&larr; Newer</a>
+        {% else %}
+          <a class="mdl-button mdl-button--primary" href="{{ site.paginate_path | replace: ':num', paginator.previous_page | prepend: site.baseurl | prepend: site.url}}">&larr; Newer</a>
+        {% endif %}
+      {% else %}
+        <a class="mdl-button mdl-button--primary" disabled>&larr; Newer</a>
+      {% endif %}
+
+      <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+      {% if paginator.next_page %}
+        <a class="mdl-button mdl-button--primary" href="{{ site.paginate_path | replace: ':num', paginator.next_page | prepend: site.baseurl | prepend: site.url}}">Older &rarr;</a>
+      {% else %}
+        <a class="mdl-button mdl-button--primary" disabled>Older &rarr;</a>
+      {% endif %}
     </div>
   </div>
-</main>
-
-<!--
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
 </div>
--->

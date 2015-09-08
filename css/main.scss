@@ -32,3 +32,14 @@ $grey-color-dark:  darken($grey-color, 25%);
     padding: 80px 56px;
     margin-bottom: 80px;
 }
+
+.post {
+  margin-bottom: 50px;
+}
+
+.pagination {
+  .mdl-button {
+    border-radius:50%;
+    min-width: 20px;
+  }
+}
