@@ -19,4 +19,7 @@ layout: default
   <article>
     {{ content }}
   </article>
+  {% if site.disqus and page.comments != false %}
+    {% include comments.html %}
+  {% endif %}
 </div>
