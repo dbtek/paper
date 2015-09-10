@@ -1,3 +1,27 @@
+/**
+ * Mixins for media queries
+ */
+$tablet-width: 840px;
+$desktop-width: 1024px;
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
 .subheader {
   font-size: 16px;
   text-transform: uppercase;
@@ -19,4 +43,17 @@
             fill: $grey-color;
         }
     }
+}
+
+.pagination {
+  .previous {
+    text-align: left;
+  }
+  .next {
+    text-align: right;
+  }
+  .indicator {
+    text-align: center;
+    padding-top: 8px;
+  }
 }

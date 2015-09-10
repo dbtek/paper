@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="paper-container mdl-grid">
+<div class="paper-container mdl-grid paper-home">
   <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
   <div class="paper-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
     {% for post in paginator.posts %}
@@ -20,7 +20,7 @@ layout: default
         </h5>
         <h3>{{ post.title }}</h3>
         {{ post.excerpt }}
-        <a class="mdl-button mdl-button--primary" href="{{ post.url }}">Read more</a>
+        <a class="mdl-button mdl-button--accent" href="{{ post.url }}">Read more</a>
       </div>
     {% endfor %}
 

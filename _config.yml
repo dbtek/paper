@@ -1,6 +1,7 @@
 # Site settings
 title: Paper Theme
-email: your-email@domain.com
+email: ce.demirbilek@gmail.com
+email_md5: 1ecf09922951ed72da5e0a6b3b12bfc1
 description: > # this means to ignore newlines until "baseurl:"
   A gentle theme for Jekyll utilising material design.
 baseurl: "/" # the subpath of your site, e.g. /blog/
@@ -11,6 +12,18 @@ github_username:  dbtek
 # Build settings
 markdown: kramdown
 
-paginate: 3 # pagination based on number of posts
+paginate: 5 # pagination based on number of posts
 paginate_path: "page/:num"
 highlighter: pygments
+
+# theming
+theme:              'blue-pink'
+# drawer theming
+drawer:
+  text_color:       'grey-600'
+  header_color:     'blue-500'
+  navigation_color: 'grey-200'
+# footer theming
+footer:
+  text_color: 'grey-200'
+  color: 'grey-600'

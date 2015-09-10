@@ -3,80 +3,13 @@
 ---
 @charset "utf-8";
 
-$primary-color: #2196F3;
-$accent-color: #FFEB3B;
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+$primary-color:     #2196F3;
+$accent-color:      #FFEB3B;
+$grey-color:        #828282;
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
         "layout",
         "syntax-highlighting"
 ;
-
-.paper-layout-transparent {
-  .mdl-layout__header {
-    background: url('../assets/desk.jpg') top / cover;
-    /* This background is dark, so we set text to white. Use 87% black instead if
-       your background is light. */
-    color: white;
-  }
-  .mdl-layout__drawer-button {
-    color: white;
-  }
-}
-
-.paper-content {
-  border-radius: 2px;
-  @include mobile {
-    padding: 10px 10px;
-    margin-top: 50px;
-  }
-  @include tablet {
-    padding: 80px 56px;
-    margin-bottom: 80px;
-  }
-  @include desktop {
-    padding: 80px 56px;
-    margin-bottom: 80px;
-  }
-}
-
-.post {
-  margin-bottom: 50px;
-}
-
-.pagination {
-  .previous {
-    text-align: left;
-  }
-  .next {
-    text-align: right;
-  }
-  .indicator {
-    text-align: center;
-    padding-top: 8px;
-  }
-}
-
-.mdl-mega-footer {
-  @include tablet {
-    padding-left: 16.66%;
-    padding-right: 16.66%;
-  }
-  @include desktop {
-    padding-left: 16.66%;
-    padding-right: 16.66%;
-  }
-}
-
-.mdl-layout__drawer-button {
-  i {
-    @include mobile {
-      color: $primary-color;
-    }
-  }
-}

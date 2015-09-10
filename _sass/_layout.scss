@@ -1,23 +1,104 @@
-/**
- * Mixins for media queries
- */
-$tablet-width: 840px;
-$desktop-width: 1024px;
+@import "base";
 
-@mixin mobile {
-  @media (max-width: #{$tablet-width - 1px}) {
-    @content;
+.paper-layout {
+  .mdl-layout__header {
+    //background: url('../assets/desk.jpg') top / cover;
+    /* This background is dark, so we set text to white. Use 87% black instead if
+       your background is light. */
+    //color: white;
+  }
+  .mdl-layout__drawer-button {
+    color: white;
   }
 }
 
-@mixin tablet {
-  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
-    @content;
+.paper-content {
+  border-radius: 2px;
+  @include mobile {
+    padding: 10px 10px;
+    margin-top: 50px;
+  }
+  @include tablet {
+    padding: 80px 56px;
+    margin-bottom: 80px;
+  }
+  @include desktop {
+    padding: 80px 56px;
+    margin-bottom: 80px;
   }
 }
 
-@mixin desktop {
-  @media (min-width: #{$desktop-width}) {
-    @content;
+.mdl-mega-footer {
+  @include tablet {
+    padding-left: 16.66%;
+    padding-right: 16.66%;
+  }
+  @include desktop {
+    padding-left: 16.66%;
+    padding-right: 16.66%;
+  }
+}
+
+.mdl-layout__drawer-button {
+  i {
+    @include mobile {
+      color: $primary-color;
+    }
+  }
+}
+
+
+.paper-drawer {
+  border: none;
+  .paper-drawer-header {
+      padding: 16px;
+      height: 151px;
+
+      img.avatar {
+        border-radius: 50%;
+      }
+
+      .paper-drawer-title {
+        display: -webkit-box;
+        padding: 20px 0;
+        font-size: 19px;
+        font-weight: 500;
+      }
+  }
+
+  .paper-navigation {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+
+    .mdl-navigation__link {
+      display: -webkit-box !important;
+      display: -webkit-flex !important;
+      display: -ms-flexbox !important;
+      display: flex !important;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      font-weight: 500;
+
+      .material-icons {
+        font-size: 24px;
+        color: rgba(255, 255, 255, 0.56);
+        margin-right: 32px;
+      }
+    }
+  }
+}
+
+.paper-home {
+  .post {
+    margin-bottom: 50px;
   }
 }

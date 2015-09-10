@@ -30,13 +30,27 @@
   </div>
 </header>
 
-<div class="mdl-layout__drawer">
-  <span class="mdl-layout-title">Title</span>
-  <nav class="mdl-navigation">
+<div class="paper-drawer mdl-layout__drawer mdl-color--{{site.drawer.header_color}}">
+  <header class="paper-drawer-header">
+    <img class="avatar" src="http://www.gravatar.com/avatar/{{ site.email_md5 }}"/>
+    <span class="paper-drawer-title">{{ site.title }}</span>
+  </header>
+
+  <nav class="paper-navigation mdl-navigation mdl-color--{{site.drawer.navigation_color}} mdl-color-text--{{site.drawer.text_color}}">
     {% for page in site.pages %}
-        {% if page.title %}
-        <a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+      {% if page.title %}
+      <a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}">
+        {% if page.icon %}
+          <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">{{ page.icon }}</i>
         {% endif %}
-      {% endfor %}
+        {{ page.title }}
+      </a>
+      {% endif %}
+    {% endfor %}
+    <div class="mdl-layout-spacer"></div>
+    <a class="mdl-navigation__link" href="https://github.com/dbtek/paper">
+      <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i>
+      Powered by Jekyll on Paper Theme
+    </a>
   </nav>
 </div>
