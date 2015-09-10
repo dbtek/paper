@@ -13,33 +13,3 @@ $grey-color:        #828282;
         "layout",
         "syntax-highlighting"
 ;
-
-
-.mdl-card {
-  width: 320px;
-  >.mdl-card__title {
-    color: #fff;
-    height: 140px;
-  }
-
-  &:nth-child(4n+1) {
-    >.mdl-card__title {
-      background-color: #46B6AC;
-    }
-  }
-  &:nth-child(4n+2) {
-    >.mdl-card__title {
-      background-color: #2196F3;
-    }
-  }
-  &:nth-child(4n+3) {
-    >.mdl-card__title {
-      background-color: #9C27B0;
-    }
-  }
-  &:nth-child(4n) {
-    >.mdl-card__title {
-      background-color: #8BC34A;
-    }
-  }
-}
