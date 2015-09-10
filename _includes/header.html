@@ -21,9 +21,10 @@
     <div class="mdl-layout-spacer"></div>
     <!-- Navigation -->
     <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="{{ site.baseurl }}">Home</a>
       {% for page in site.pages %}
         {% if page.title %}
-        <a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          <a class="mdl-navigation__link" href="{{ page.url }}">{{ page.title }}</a>
         {% endif %}
       {% endfor %}
     </nav>
@@ -37,9 +38,13 @@
   </header>
 
   <nav class="paper-navigation mdl-navigation mdl-color--{{site.drawer.navigation_color}} mdl-color-text--{{site.drawer.text_color}}">
+    <a class="mdl-navigation__link" href="{{ site.baseurl }}">
+      <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>
+      Home
+    </a>
     {% for page in site.pages %}
       {% if page.title %}
-      <a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}">
+      <a class="mdl-navigation__link" href="{{ page.url }}">
         {% if page.icon %}
           <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">{{ page.icon }}</i>
         {% endif %}
