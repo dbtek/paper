@@ -103,6 +103,27 @@
   }
 }
 
+.post {
+  h4 {
+    font-size: 18px;
+  }
+  h5 {
+    font-size: 16px;
+  }
+  .author {
+    .author-avatar {
+      text-align: center;
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    .author-name {
+      margin-top: 10px;
+    }
+  }
+}
+
 
 .paper-layout-header {
   overflow: visible;

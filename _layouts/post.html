@@ -19,6 +19,83 @@ layout: default
   <article>
     {{ content }}
   </article>
+
+  <div class="mdl-grid">
+    <section class="share mdl-cell mdl-cell--6-col">
+      <h4>Share Post</h4>
+
+
+      <a id="twitter" class="mdl-button mdl-button--primary twitter" href="http://twitter.com/share?text={{page.title | encode}}{% if site.author.twitter%}&via={{site.author.twitter}}{% endif %}"
+         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="icon">
+          <svg viewBox="0 0 16 16">
+            <path style="fill: #5EA9DD" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+            c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/><!--[if lt IE 9]><em>Twitter</em><![endif]-->
+          </svg>
+        </span>
+        Twitter
+      </a>
+      <div class="mdl-tooltip" for="twitter">
+        Share post on Twitter
+      </div>
+      <a id="facebook" class="mdl-button mdl-button--primary facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="icon">
+          <svg viewBox="0 0 512 512"><path style="fill: #3864A3" d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z"/></svg><!--[if lt IE 9]><em>Facebook</em><![endif]-->
+        </span>
+        Facebook
+      </a>
+      <div class="mdl-tooltip" for="facebook">
+        Share post on Facebook
+      </div>
+
+      <a id="gplus" class="mdl-button mdl-button--primary gplus" onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="icon">
+          <svg viewBox="0 0 512 512"><path style="fill: #DC4A38" d="M416.6 179.9h-41.5v41.5h-20.8v-41.5h-41.5v-20.8h41.5v-41.5h20.8v41.5h41.5V179.9zM299.2 351.6c0 31.1-28.4 69-99.9 69 -52.3 0-95.9-22.5-95.9-60.5 0-29.3 18.5-67.3 105.1-67.3 -12.9-10.5-16-25.1-8.2-41 -50.7 0-76.7-29.8-76.7-67.7 0-37 27.5-70.7 83.7-70.7 14.2 0 90 0 90 0l-20.1 21.1h-23.6c16.7 9.5 25.5 29.2 25.5 50.9 0 19.9-11 36-26.6 48.1 -27.7 21.4-20.6 33.4 8.4 54.6C289.7 309.6 299.2 326.2 299.2 351.6zM243.1 186.8c-4.2-31.8-24.9-58-49.2-58.7 -24.3-0.7-40.5 23.7-36.3 55.5 4.2 31.8 27.2 54.1 51.5 54.8C233.3 239.1 247.3 218.6 243.1 186.8zM268.1 354.8c0-26.2-23.9-51.2-64-51.2 -36.1-0.4-66.8 22.8-66.8 49.8 0 27.5 26.1 50.4 62.2 50.4C245.8 403.7 268.1 382.2 268.1 354.8z"/></svg><!--[if lt IE 9]><em>GooglePlus</em><![endif]-->
+        </span>
+        Google+
+      </a>
+      <div class="mdl-tooltip" for="gplus">
+        Share post on Google+
+      </div>
+    </section>
+
+    {% if site.author %}
+      <section class="mdl-cell mdl-cell--6-col author">
+        <h4>Author</h4>
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--3-col author-avatar">
+            <img src="http://www.gravatar.com/avatar/{{site.author.email_md5}}?s=75" />
+          </div>
+          <div class="mdl-cell mdl-cell--9-col">
+            <h5 class="section-title author-name">
+              {{site.author}}
+            </h5>
+            <p class="author-bio">{{site.bio}}</p>
+          </div>
+        </div>
+      </section>
+    {% endif %}
+  </div>
+
+  <div class="mdl-grid pagination">
+    <div class="mdl-cell mdl-cell--6-col previous">
+      {% if page.previous %}
+        <a class="mdl-button mdl-button--primary" href="{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous Post</a>
+      {% else %}
+        <a class="mdl-button mdl-button--primary" disabled>&larr; Previous Post</a>
+      {% endif %}
+    </div>
+
+    <div class="mdl-cell mdl-cell--6-col next">
+      {% if page.next %}
+        <a class="mdl-button mdl-button--primary" href="{{ page.next.url }}" title="{{ page.next.title }}">Next Post &rarr;</a>
+      {% else %}
+        <a class="mdl-button mdl-button--primary" disabled>Next Post &rarr;</a>
+      {% endif %}
+    </div>
+  </div>
+
   {% if site.disqus and page.comments != false %}
     {% include comments.html %}
   {% endif %}
