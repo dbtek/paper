@@ -1,4 +1,4 @@
-<header class="mdl-layout__header mdl-layout__header--waterfall">
+<header class="paper-layout-header mdl-layout__header mdl-layout__header--waterfall">
   <!-- Top row, always visible -->
   <div class="mdl-layout__header-row">
     <!-- Title -->
@@ -7,15 +7,19 @@
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
                 mdl-textfield--floating-label mdl-textfield--align-right">
       <label class="mdl-button mdl-js-button mdl-button--icon"
-             for="waterfall-exp">
+             for="search-input">
         <i class="material-icons">search</i>
       </label>
       <div class="mdl-textfield__expandable-holder">
         <input class="mdl-textfield__input" type="text" name="sample"
-               id="waterfall-exp" />
+               id="search-input" />
       </div>
     </div>
+    <ul id="search-results">
+      <li class="mdl-menu__item" disabled>Search results</li>
+    </ul>
   </div>
+
   <!-- Bottom row, not visible on scroll -->
   <div class="mdl-layout__header-row">
     <div class="mdl-layout-spacer"></div>
@@ -30,6 +34,7 @@
     </nav>
   </div>
 </header>
+
 
 <div class="paper-drawer mdl-layout__drawer mdl-color--{{site.drawer.header_color}}">
   <header class="paper-drawer-header">

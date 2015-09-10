@@ -102,3 +102,28 @@
     margin-bottom: 50px;
   }
 }
+
+
+.paper-layout-header {
+  overflow: visible;
+}
+
+
+// mdl menu hacks
+.mdl-menu__container {
+  width: 240px;
+  right: 20px;
+  top: 54px;
+
+  &.is-visible {
+    .mdl-menu__outline {
+      //width: 250px !important;
+      z-index: -1 !important;
+      padding-bottom: 20px;
+    }
+
+    ul {
+      padding-left: 0;
+    }
+  }
+}
