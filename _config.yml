@@ -3,25 +3,26 @@ title: Paper Theme
 description: > # this means to ignore newlines until "baseurl:"
   A gentle theme for Jekyll utilising material design.
 baseurl: "/" # the subpath of your site, e.g. /blog/
+# url: "http://yourdomain.com" # the base hostname & protocol for your site you most probably don't need to set it
+
+# Build settings
+markdown: kramdown
+paginate: 5 # pagination based on number of posts
+paginate_path: "page/:num"
+highlighter: pygments
 
 # comments
 disqus: # add disqus shortname here
 
 # author info
-email: ce.demirbilek@gmail.com
-email_md5: 1ecf09922951ed72da5e0a6b3b12bfc1
-#url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: dbtek
-github_username:  dbtek
+# add your appropriate info here
+email:
+email_md5: # md5 hash of your email
+twitter_username:
+github_username:
 
-# Build settings
-markdown: kramdown
-
-paginate: 5 # pagination based on number of posts
-paginate_path: "page/:num"
-highlighter: pygments
-
-# theming
+# Theming options
+# These settings are mandatory.
 theme:              'blue-pink'
 # drawer theming
 drawer:
