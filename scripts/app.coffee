@@ -20,5 +20,4 @@ SimpleJekyllSearch
   resultsContainer: resultsElem
   json: '/search.json'
   searchResultTemplate: '<a class="mdl-menu__item" href="{url}">{title}</a>'
-
-
+  noResultsText: '<a class="mdl-menu__item" disabled>No results.</a>'
