@@ -2,25 +2,21 @@
 layout: default
 ---
 <div class="post">
-
-  <div class="post">
-    <header>
-      <h5 class="subheader">
-        {% assign d = page.date | date: "%d" | plus:'0' %}
-        {{ page.date | date: "%B" }}
-        {% case d %}
-        {% when 1 or 21 or 31 %}{{ d }}st,
-        {% when 2 or 22 %}{{ d }}nd,
-        {% when 3 or 23 %}{{ d }}rd,
-        {% else %}{{ d }}th,
-        {% endcase %}
-        {{ page.date | date: "%Y" }}
-      </h5>
-      <h3>{{ page.title }}</h3>
-    </header>
-    <article>
-      {{ content }}
-    </article>
-  </div>
-
+  <header>
+    <h5 class="subheader">
+      {% assign d = page.date | date: "%d" | plus:'0' %}
+      {{ page.date | date: "%B" }}
+      {% case d %}
+      {% when 1 or 21 or 31 %}{{ d }}st,
+      {% when 2 or 22 %}{{ d }}nd,
+      {% when 3 or 23 %}{{ d }}rd,
+      {% else %}{{ d }}th,
+      {% endcase %}
+      {{ page.date | date: "%Y" }}
+    </h5>
+    <h3>{{ page.title }}</h3>
+  </header>
+  <article>
+    {{ content }}
+  </article>
 </div>
