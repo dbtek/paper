@@ -1,0 +1,25 @@
+---
+layout: page
+title: Categories
+---
+
+<div class="mdl-grid">
+  {% for category in site.categories %}
+    <div class="demo-card-square mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col">
+      <div class="mdl-card__title mdl-card--expand">
+        <h2 id="{{ category[0] | replace:' ','-' }}" class="mdl-card__title-text">{{ category[0] | capitalize }}</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        {% assign pages_list = category[1] %}
+          {% for node in pages_list %}
+            {% if node.title != null %}
+              {% if group == null or group == node.group %}
+                <li style="line-height: 35px;"><a href="{{ site.BASE_PATH }}{{node.url}}">{{node.title}}</a> <span class="text-muted">- {{ node.date | date: "%B %d, %Y" }}</span></li>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          {% assign pages_list = nil %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
