@@ -11,6 +11,9 @@ icon: folder
         <h2 id="{{ category[0] | replace:' ','-' }}" class="mdl-card__title-text">{{ category[0] | capitalize }}</h2>
       </div>
 
+      <div class="mdl-card__menu">
+        <i class="material-icons mdl-badge" data-badge="{{ category[1].size }}">bookmark_border</i>
+      </div>
       <div class="mdl-card__actions mdl-card--border">
         {% assign pages_list = category[1] %}
         {% for node in pages_list %}
