@@ -1,23 +1,43 @@
 ---
 ---
 
-searchInputElem = document.getElementById 'search-input'
-resultsElem = document.getElementById 'search-results'
+# app initialize operations
+initialize = ->
+  # set min height of container
+  containerElem = document.getElementById 'container'
+  footerElem = document.getElementById 'footer'
+  toolbarElem = document.getElementById 'toolbar'
+  containerElem.style.minHeight = "#{window.innerHeight - footerElem.offsetHeight - toolbarElem.offsetHeight}px"
+  # bind resize event
+  window.onresize = ->
+    containerElem.style.minHeight = "#{window.innerHeight - footerElem.offsetHeight - toolbarElem.offsetHeight}px"
 
-# create mdl menu
-resultsMenu = new MaterialMenu resultsElem
-resultsMenu.forElement_ = searchInputElem
+  # init search
+  do initSearch
 
-searchInputElem.onkeyup = ->
-  resultsMenu.show()
+# initializes search functionality via jekyll-search
+initSearch = ->
+  searchInputElem = document.getElementById 'search-input'
+  resultsElem = document.getElementById 'search-results'
 
-searchInputElem.onBlur = ->
-  resultsMenu.hide()
+  # create mdl menu
+  resultsMenu = new MaterialMenu resultsElem
+  resultsMenu.forElement_ = searchInputElem
 
-# instantiate jekyll-search
-SimpleJekyllSearch
-  searchInput: searchInputElem
-  resultsContainer: resultsElem
-  json: '/search.json'
-  searchResultTemplate: '<a class="mdl-menu__item" href="{url}">{title}</a>'
-  noResultsText: '<a class="mdl-menu__item" disabled>No results.</a>'
+  searchInputElem.onkeyup = ->
+    resultsMenu.show()
+
+  searchInputElem.onBlur = ->
+    resultsMenu.hide()
+
+  # instantiate jekyll-search
+  SimpleJekyllSearch
+    searchInput: searchInputElem
+    resultsContainer: resultsElem
+    json: '/search.json'
+    searchResultTemplate: '<a class="mdl-menu__item" href="{url}">{title}</a>'
+    noResultsText: '<a class="mdl-menu__item" disabled>No results.</a>'
+
+
+# fire application
+do initialize
