@@ -33,5 +33,5 @@ drawer:
   navigation_color: 'grey-200'
 # footer theming
 footer:
-  text_color: 'grey-200'
-  color: 'grey-600'
+  text_color: 'blue-grey-200'
+  color: 'blue-grey-600'
