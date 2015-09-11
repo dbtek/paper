@@ -15,10 +15,62 @@ layout: default
       {{ page.date | date: "%Y" }}
     </h5>
     <h3>{{ page.title }}</h3>
+    <!-- Categories -->
+    <div class="categories">
+      Posted in:
+      {% unless page.categories == empty %}
+        <ul class="categories-list">
+          {% assign categories_list = page.categories %}
+          {% if categories_list.first[0] == null %}
+            {% for category in categories_list %}
+              <li>
+                <a href="{{ site.BASE_PATH }}/{{ site.categories_path }}#{{ category }}-ref">
+                  {{ category | join: "/" }}{% unless forloop.last %},{% endunless %}
+                </a>
+              </li>
+            {% endfor %}
+          {% else %}
+            {% for category in categories_list %}
+              <li><a href="{{ site.BASE_PATH }}/{{ site.categories_path }}#{{ category[0] }}-ref">
+                {{ category[0] | join: "/" }}
+              </a></li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+      {% endunless %}
+    </div>
   </header>
   <article>
     {{ content }}
   </article>
+
+  <div class="tags">
+    Tagged with:
+    {% unless page.tags == empty %}
+      <ul class="list-inline">
+        {% assign tags_list = page.tags %}
+        {% if tags_list.first[0] == null %}
+        {% for tag in tags_list %}
+          <li>
+            <a href="{{ site.BASE_PATH }}/{{ site.tags_path }}#{{ tag }}-ref">
+            {{ tag }}{% unless forloop.last %},{% endunless %}
+            </a>
+          </li>
+        {% endfor %}
+        {% else %}
+        {% for tag in tags_list %}
+          <li>
+            <a href="{{ site.BASE_PATH }}/{{ site.tags_path }}#{{ tag[0] }}-ref">
+              {{ tag[0] }}{% unless forloop.last %},{% endunless %}
+            </a>
+          </li>
+
+        {% endfor %}
+        {% endif %}
+        {% assign tags_list = nil %}
+      </ul>
+    {% endunless %}
+  </div>
 
   <div class="mdl-grid">
     <section class="share mdl-cell mdl-cell--6-col">
