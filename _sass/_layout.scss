@@ -158,6 +158,30 @@
       height: 140px;
     }
 
+    .mdl-card__actions {
+      .mdl-button {
+        line-height: 27px;
+        text-transform: none;
+        width: 100%;
+        text-align: left;
+        height: auto;
+
+        .button-header {
+          display: block;
+          padding-top: 5px;
+        }
+
+        .button-subheader {
+            display: block;
+            font-size: 12px;
+            font-weight: 300;
+            text-align: right;
+            padding-right: 15px;
+            color: $grey_color;
+        }
+      }
+    }
+
     &:nth-child(4n+1) {
       >.mdl-card__title {
         background-color: #46B6AC;
@@ -170,7 +194,7 @@
     }
     &:nth-child(4n+3) {
       >.mdl-card__title {
-        background-color: #9C27B0;
+        background-color: #EC407A;
       }
     }
     &:nth-child(4n) {
