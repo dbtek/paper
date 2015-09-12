@@ -3,6 +3,9 @@ A new material design utilising theme for your Jekyll blog. Built on [Material D
 
 ![screenshot](assets/screenshots/mockup.jpg)
 
+## Demo
+ [dbtek.github.io/paper-demo](http://dbtek.github.io/paper-demo)
+
 ### Batteries Included
 There are many cool features bundled with Paper such as:
 
