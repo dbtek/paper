@@ -17,8 +17,8 @@ layout: default
     <h3>{{ page.title }}</h3>
     <!-- Categories -->
     <div class="categories">
-      Posted in:
       {% unless page.categories == empty %}
+        Posted in:
         <ul class="categories-list">
           {% assign categories_list = page.categories %}
           {% if categories_list.first[0] == null %}
@@ -45,8 +45,8 @@ layout: default
   </article>
 
   <div class="tags">
-    Tagged with:
     {% unless page.tags == empty %}
+      Tagged with:
       <ul class="list-inline">
         {% assign tags_list = page.tags %}
         {% if tags_list.first[0] == null %}
