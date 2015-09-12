@@ -1,49 +1,45 @@
 @import "base";
 
-.paper-layout {
-  .mdl-layout__header {
-    //background: url('../assets/desk.jpg') top / cover;
-    /* This background is dark, so we set text to white. Use 87% black instead if
-       your background is light. */
-    //color: white;
-  }
-  .mdl-layout__drawer-button {
-    color: white;
-  }
-}
-
 .paper-content {
   border-radius: 2px;
+  margin: 0 auto;
+  width: calc(100% - 20px);
+
   @include mobile {
-    padding: 10px 10px;
-    margin-top: 50px;
+    width: calc(100% - 10px);
+    padding: 40px 10px 20px;
+    margin-bottom: 10px;
   }
   @include tablet {
-    padding: 80px 56px;
-    margin-bottom: 80px;
+    padding: 10px 56px;
+    margin-bottom: 20px;
   }
   @include desktop {
-    padding: 80px 56px;
-    margin-bottom: 80px;
+    margin-top: 10px;
+    padding: 10px 56px;
+    margin-bottom: 30px;
+    max-width: 1260px;
   }
 }
 
 .mdl-mega-footer {
-  @include tablet {
-    padding-left: 16.66%;
-    padding-right: 16.66%;
-  }
-  @include desktop {
-    padding-left: 16.66%;
-    padding-right: 16.66%;
+  .mdl-mega-footer__top-section,
+  .mdl-mega-footer__middle-section,
+  .mdl-mega-footer__bottom-section {
+    margin: 0 auto;
+    width: calc(100% - 20px);
+    @include mobile {
+      width: calc(100% - 10px);
+    }
+    @include desktop {
+      max-width: 1260px;
+    }
   }
 }
 
 .mdl-layout__drawer-button {
-  i {
-    @include mobile {
-      color: $primary-color;
-    }
+  @include desktop {
+    display: none;
   }
 }
 
