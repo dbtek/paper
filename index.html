@@ -27,7 +27,7 @@ layout: default
     <div class="mdl-cell mdl-cell--4-col previous">
       {% if paginator.previous_page %}
         {% if paginator.previous_page == 1 %}
-          <a class="mdl-button mdl-button--primary" href="{{ site.baseurl | prepend: site.url}}">&larr; Newer</a>
+          <a class="mdl-button mdl-button--primary" href="{{ site.baseurl }}{{ prepend: site.url}}">&larr; Newer</a>
         {% else %}
           <a class="mdl-button mdl-button--primary" href="{{ site.paginate_path | replace: ':num', paginator.previous_page | prepend: site.baseurl | prepend: site.url}}">&larr; Newer</a>
         {% endif %}
