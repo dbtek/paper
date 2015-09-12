@@ -241,3 +241,9 @@
     }
   }
 }
+
+.mdl-layout__header-row {
+  @include desktop {
+    padding-left: 40px;
+  }
+}
