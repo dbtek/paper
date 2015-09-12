@@ -160,6 +160,21 @@
 
 .paper-layout-header {
   overflow: visible;
+
+  .paper-avatar {
+    position: relative;
+    left: 50%;
+    top: 20px;
+    margin-left: -37.5px;
+    img {
+      border-radius: 50%;
+      transition: all 0.2s linear;
+    }
+  }
+  &.is-compact .paper-avatar img {
+    top: 10px;
+    transform: scale(0) translate(0, 100px);
+  }
 }
 
 
