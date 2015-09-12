@@ -34,7 +34,7 @@ initSearch = ->
   SimpleJekyllSearch
     searchInput: searchInputElem
     resultsContainer: resultsElem
-    json: '/search.json'
+    json: '{{ "search.json" | prepend: site.baseurl | prepend: site.url }}'
     searchResultTemplate: '<a class="mdl-menu__item" href="{url}">{title}</a>'
     noResultsText: '<a class="mdl-menu__item" disabled>No results.</a>'
 
