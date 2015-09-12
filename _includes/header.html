@@ -31,7 +31,7 @@
       <a class="mdl-navigation__link" href="{{ site.baseurl }}">Home</a>
       {% for page in site.pages %}
         {% if page.title %}
-          <a class="mdl-navigation__link" href="{{ page.url }}">{{ page.title }}</a>
+          <a class="mdl-navigation__link" href="{{ page.url | replace_first: '/', '' | prepend: site.baseurl | prepend: site.url }}">{{ page.title }}</a>
         {% endif %}
       {% endfor %}
     </nav>
