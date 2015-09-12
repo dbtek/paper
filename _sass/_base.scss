@@ -2,7 +2,7 @@
  * Mixins for media queries
  */
 $tablet-width: 840px;
-$desktop-width: 1024px;
+$desktop-width: 1025px;
 
 @mixin mobile {
   @media (max-width: #{$tablet-width - 1px}) {
