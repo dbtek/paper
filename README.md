@@ -1,7 +1,7 @@
 # Paper for Jekyll
 A new material design utilising theme for your Jekyll blog. Built on [Material Design Lite](http://www.getmdl.io/).
 
-![screenshot](assets/screenshots/mockup.png)
+![screenshot](assets/screenshots/mockup.jpg)
 
 ### Batteries Included
 There are many cool features bundled with Paper such as:
