@@ -166,12 +166,12 @@
     left: 50%;
     top: 20px;
     margin-left: -37.5px;
+    transition: all 0.2s linear;
     img {
       border-radius: 50%;
-      transition: all 0.2s linear;
     }
   }
-  &.is-compact .paper-avatar img {
+  &.is-compact .paper-avatar {
     top: 10px;
     transform: scale(0) translate(0, 100px);
   }
