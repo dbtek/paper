@@ -38,7 +38,7 @@
         {% for page in site.pages %}
           {% if page.title %}
             <li>
-              <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+              <a href="{{ page.url | prepend: site.baseurl | prepend: site.url}}">{{ page.title }}</a>
             </li>
           {% endif %}
       {% endfor %}
@@ -51,7 +51,7 @@
             {% if categories_list.first[0] == null %}
               {% for category in categories_list %}
                 <li>
-                  <a href="{{ 'categories.html' | prepend: site.baseurl }}/{{ category | replace:' ','-' }}">
+                  <a href="{{ 'categories.html' | prepend: site.baseurl | prepend: site.url}}/{{ category | replace:' ','-' }}">
                     {{ category | capitalize }}
                   </a>
                 </li>
@@ -59,7 +59,7 @@
             {% else %}
               {% for category in categories_list %}
                 <li>
-                  <a href="{{ 'categories.html' | prepend: site.baseurl }}#{{ category[0] | replace:' ','-' }}">
+                  <a href="{{ 'categories.html' | prepend: site.baseurl | prepend: site.url}}#{{ category[0] | replace:' ','-' }}">
                       {{ category[0] | capitalize }}
                   </a>
                 </li>
