@@ -19,7 +19,7 @@ icon: folder
         {% for node in pages_list %}
           {% if node.title != null %}
             {% if group == null or group == node.group %}
-              <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{{ site.BASE_PATH }}{{node.url}}">
+              <a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{{ node.url | replace_first: '/', '' | prepend: site.baseurl | prepend: site.url }}">
                 <span class="button-header">
                   {{node.title}}
                 </span>
