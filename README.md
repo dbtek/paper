@@ -12,11 +12,19 @@ There are many cool features bundled with Paper such as:
 - Full Github Pages support.
 - Responsive layout.
 - Dynamic search with [jekyll-search](https://github.com/christian-fei/Simple-Jekyll-Search/).
+- Customizable theme colors.
+- Sass variables.
+- RSS feed.
 - Post tags and categories.
-- Autor Github, Twitter, bio.
 - Pagination.
 - Syntax highlighting with pygments.
 - Disqus comments.
+
+### Tech
+Under the hood Paper contains:  
+- Material Design Lite.
+- CoffeeScript.
+- Sass.
 
 ### Install
 Easiest way of getting Paper work is forking.
